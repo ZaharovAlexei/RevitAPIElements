@@ -1,0 +1,17 @@
+﻿<Window x:Class="RevitAPIElements.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPIElements"
+             mc:Ignorable="d" 
+             Height="200" Width="300">
+    <StackPanel>
+        <Label Content="Выберите элемент" Margin="5"/>
+        <ComboBox ItemsSource="{Binding ElementsList}" SelectedValue="{Binding SelectedElement}"
+                  DisplayMemberPath="Name" Margin="5"/>
+        <Label Content="Количество элементов"/>
+        <TextBox Text="{Binding ElementCount}" Margin="5"/>
+        <Button Content="Указать точки" Margin="5" Command="{Binding BuildCommand}"/>
+    </StackPanel>
+</Window>
